@@ -1,0 +1,24 @@
+# This is a sample FIO job file for the optimization script.
+# The script will override 'numjobs' and 'runtime' parameter. 
+
+[global]
+ioengine=libaio
+direct=1
+filename=/dev/sda
+filename=/dev/sdb
+size=200G
+runtime=300
+time_based=1
+group_reporting
+
+# Add any other global options you need.
+# For client/server mode, ensure fio is running in server mode on all clients:
+# fio --server --daemonize=/var/run/fio.pid
+
+[randread]
+bs=256K
+rw=read
+iodepth=${iodepth}
+numjobs=${numjobs}
+# Add other job-specific parameters here.
+# For example: rate_iops, latency_target_msec, etc.
