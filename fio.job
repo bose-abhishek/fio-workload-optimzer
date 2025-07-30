@@ -15,7 +15,7 @@ group_reporting
 # For client/server mode, ensure fio is running in server mode on all clients:
 # fio --server --daemonize=/var/run/fio.pid
 
-[randread]
+[test]
 bs=256K
 rw=read
 iodepth=${iodepth}
